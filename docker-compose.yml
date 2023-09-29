@@ -1,0 +1,11 @@
+version: "3"
+services:
+  redisdb:
+    container_name: redis
+    hostname: redis
+    image: redis
+    command: redis-server
+    volumes:
+        - /redis/data:/data
+    ports:
+      - "6379:6379"
