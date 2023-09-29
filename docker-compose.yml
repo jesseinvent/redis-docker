@@ -4,6 +4,9 @@ services:
     container_name: redis
     hostname: redis
     image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - DISABLE_COMMANDS=FLUSHDB,FLUSHALL,CONFIG
     command: redis-server
     volumes:
         - /redis/data:/data
